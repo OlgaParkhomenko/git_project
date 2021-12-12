@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block container %}
+
+<hr/>
+    <h3 class="m-3 b-0">{{ title }}</h3>
+    <p>
+        <table class="table table-striped">
+            <thead>
+            {% for rows in table_header %}
+                <th>{{ rows }}</th>
+            {% endfor %}
+            </thead>
+            {% for rows in table_data %}
+            <tr>
+                {% for data in rows %}
+                <td>{{ data }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </p>
+<hr>
+
+{% endblock container %}

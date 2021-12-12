@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block container %}
+
+<hr/>
+    <h3 class="m-2 b-0">{{ title }}</h3>
+    <div>
+        <img class="m-2 b-0" src= {{ image }} alt="Salvador Dali Portrait" width="200">
+        {% for header, data in data_dict.items() %}
+            <h3 class="m-2 b-0">{{ header }}</h3>
+            {% for line in data %}
+                <p class="m-2 b-0">{{ line }}</p>
+            {% endfor %}
+        <br>
+        {% endfor %}
+
+    </div>
+<hr>
+
+{% endblock container %}
