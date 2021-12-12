@@ -5,6 +5,22 @@ from flask import render_template
 app = Flask(__name__)
 
 
+# @app.route("/", defaults={'my_path': ''})
+# @app.route("/<path:my_path>")
+# def menu(my_path):
+#     menu_links = {"index": 'Главная - Сальвадор Дали',
+#                   "about": 'Про Сальвадора',
+#                   "contact": 'Написать отзыв'
+#                   }
+#     output = render_template('menu.html', menu_links=menu_links)
+#     return output
+
+menu_links = {"index": 'Главная - Сальвадор Дали',
+              "about": 'Про Сальвадора',
+              "contact": 'Написать отзыв'
+                  }
+
+
 @app.route("/index")
 def index_page():
     title = 'Образ Сальвадора Дали в кинематографе'
@@ -15,7 +31,8 @@ def index_page():
                   ['2008', 'Великобритания, Испания', 'Отголоски прошлого', 'Пол Моррисон', 'Роберт Паттинсон'],
                   ['2011', 'США, Испания', 'Полночь в Париже', 'Вуди Аллен', 'Эдриен Броуди']
                   ]
-    output = render_template('index.html', title=title, table_header=table_header, table_data=table_data)
+    global menu_links
+    output = render_template('index.html', title=title, table_header=table_header, table_data=table_data, menu_links=menu_links)
     return output
 
 
