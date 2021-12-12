@@ -1,4 +1,4 @@
-<form>
+<form action="{{ url_for('contact_page') }}" method="POST">
     <div class="m-2 b-3">
         <label for="fname">Имя:</label><br>
         <input type="text" id="fname" name="fname"><br>
@@ -13,18 +13,19 @@
     </div>
     <div class="m-2 b-3">
         <label for="options">Тема отзыва</label>
-        <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="options">
-            <option selected>Творчество</option>
-            <option value="value1">Биография</option>
-            <option value="value2">Фильмография</option>
-            <option value="value3">Прочее</option>
+        <select name="options" class="form-select form-select-sm" aria-label=".form-select-sm example" id="options">
+            <option selected value=""></option>
+            <option value="Биография">Биография</option>
+            <option value="Фильмография">Фильмография</option>
+            <option value="Творчество">Творчество</option>
+            <option value="Прочее">Прочее</option>
         </select><br>
     </div>
     <div class="m-2 b-3">
         <textarea placeholder="Напишите Ваш отзыв" name="message" rows="6" cols="50"></textarea><br>
     </div>
     <div class="m-2 b-3">
-        <input type="checkbox" id="answer" name="answer">
+        <input type="checkbox" id="answer" name="answer" value="Получить ответ по электронной почте">
         <label for="answer"> Получить ответ по электронной почте</label><br>
     </div>
     <div class="m-2 b-3">

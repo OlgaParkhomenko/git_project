@@ -13,5 +13,6 @@ Texts are stored in separate .txt files in directory '/texts'.
 
 /contact
 Interactive form for feedback.
+Feedbacks are collected in 'responses.yxy' file.
 ```
 

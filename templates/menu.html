@@ -1,5 +1,5 @@
 <nav class="nav justify-content-center">
-  {% for href, title in menu_links%}
-    <a class="nav-link" href={{ href }}>{{ title }}/a><br>
+  {% for key, value in menu_links.items()%}
+    <a class="nav-link" href= {{ key }}>{{ value }}</a><br>
   {% endfor %}
 </nav>
