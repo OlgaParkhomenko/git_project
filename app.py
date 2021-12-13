@@ -77,20 +77,16 @@ def contact_page():
 
 @app.errorhandler(404)
 def page_not_found(e):
-    content = 'Ошибка 404'
-    title = 'Ошибка 404'
     image = 'static/404.png'
     message = '404 : Что-то пошло не так'
-    return render_template('404.html', content=content, title=title, menu_links=menu_links, image=image, message=message)
+    return render_template('error.html', menu_links=menu_links, image=image, message=message)
 
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    content = 'Ошибка 500'
-    title = 'Ошибка 500'
     image = 'static/500.png'
     message = '500 : Случилась ошибка'
-    return render_template('500.html', content=content, title=title, menu_links=menu_links, image=image, message=message)
+    return render_template('error.html', menu_links=menu_links, image=image, message=message)
 
 
 if __name__ == "__main__":
