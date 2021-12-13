@@ -34,7 +34,7 @@ def index_page():
 @app.route("/about")
 def about_page():
     title = 'Биография Сальвадора Дали'
-    image = '"../images/salvador-dali.png"'
+    image = 'static/salvador-dali.png'
     h3_dict = {'': 'texts/general_info.txt',
                'Детство': 'texts/childhood.txt',
                'Юность': 'texts/young_adulthood.txt',
@@ -73,6 +73,24 @@ def contact_page():
 
     output = render_template('contact.html', title=title, menu_links=menu_links, data_collecting=data_collecting())
     return output
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    content = 'Ошибка 404'
+    title = 'Ошибка 404'
+    image = 'static/404.png'
+    message = '404 : Что-то пошло не так'
+    return render_template('404.html', content=content, title=title, menu_links=menu_links, image=image, message=message)
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    content = 'Ошибка 500'
+    title = 'Ошибка 500'
+    image = 'static/500.png'
+    message = '500 : Случилась ошибка'
+    return render_template('500.html', content=content, title=title, menu_links=menu_links, image=image, message=message)
 
 
 if __name__ == "__main__":
